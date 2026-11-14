@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="droneFire" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="25%" stop-color="#fef08a" />
+      <stop offset="55%" stop-color="#f97316" />
+      <stop offset="85%" stop-color="#b91c1c" />
+      <stop offset="100%" stop-color="#450a0a" stop-opacity="0" />
+    </radialGradient>
+    <filter id="flameGlow">
+      <feGaussianBlur stdDeviation="10" />
+    </filter>
+  </defs>
+
+  <!-- Vista aérea táctica bosque / colinas -->
+  <rect width="800" height="500" fill="#14231b" />
+  
+  <!-- Textura de dosel arbóreo -->
+  <path d="M0,0 L800,0 L800,500 L0,500 Z" fill="#1a3324" />
+  
+  <!-- Área quemada previa (negro ceniza) -->
+  <path d="M0,0 L420,0 L360,240 L180,500 L0,500 Z" fill="#171717" stroke="#451a03" stroke-width="3" />
+  
+  <!-- Línea de cortafuegos / carretera forestal (Firebreak line) -->
+  <path d="M520,0 L480,220 L440,500" stroke="#ca8a04" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.9" />
+  <path d="M520,0 L480,220 L440,500" stroke="#fef08a" stroke-width="2" stroke-dasharray="8,8" fill="none" />
+  <text x="500" y="470" fill="#fef08a" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold">LÍNEA CORTAFUEGOS TÁCTICA</text>
+
+  <!-- Frente de llama activo avanzando hacia el cortafuegos -->
+  <path d="M420,0 Q390,130 360,240 T180,500" stroke="#ef4444" stroke-width="26" filter="url(#flameGlow)" fill="none" opacity="0.9" />
+  <path d="M420,0 Q390,130 360,240 T180,500" stroke="#f97316" stroke-width="14" fill="none" />
+  <path d="M420,0 Q390,130 360,240 T180,500" stroke="#ffffff" stroke-width="4" fill="none" />
+
+  <!-- Detecciones puntuales de chispas secundarias (Spotting) saltando el cortafuegos -->
+  <circle cx="580" cy="180" r="16" fill="url(#droneFire)" />
+  <circle cx="610" cy="195" r="12" fill="url(#droneFire)" />
+  <circle cx="580" cy="180" r="30" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,4" fill="none" />
+  <text x="610" y="175" fill="#ef4444" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold">🚨 FOCO SECUNDARIO (SPOTTING)</text>
+
+  <!-- HUD Telemetría Dron de Reconocimiento -->
+  <rect x="20" y="20" width="350" height="105" rx="8" fill="#030712" fill-opacity="0.85" stroke="#0284c7" stroke-width="1.5" />
+  <text x="35" y="42" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">🚁 DRON TÁCTICO FLIR | RECONOCIMIENTO</text>
+  <text x="35" y="60" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="11">Altitud: 450 m AGL | Sensor: Térmico MWIR</text>
+  <text x="35" y="78" fill="#f87171" font-family="'JetBrains Mono', monospace" font-size="11">Distancia al Cortafuegos: 65 m | Viento: 28 km/h SO</text>
+  <text x="35" y="96" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="10">ALERTA: Foco secundario activo cruzando la línea</text>
+
+  <!-- Cruz de puntería táctica -->
+  <g transform="translate(360, 240)">
+    <circle cx="0" cy="0" r="35" stroke="#38bdf8" stroke-width="1.5" fill="none" stroke-dasharray="6,4" />
+    <line x1="-45" y1="0" x2="-10" y2="0" stroke="#38bdf8" stroke-width="2" />
+    <line x1="10" y1="0" x2="45" y2="0" stroke="#38bdf8" stroke-width="2" />
+    <line x1="0" y1="-45" x2="0" y2="-10" stroke="#38bdf8" stroke-width="2" />
+    <line x1="0" y1="10" x2="0" y2="45" stroke="#38bdf8" stroke-width="2" />
+  </g>
+</svg>

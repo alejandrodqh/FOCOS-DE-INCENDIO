@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="pantanalCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="35%" stop-color="#fb923c" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#dc2626" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#7f1d1d" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="wetlandSmoke" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc" stop-opacity="0.7" />
+      <stop offset="40%" stop-color="#94a3b8" stop-opacity="0.55" />
+      <stop offset="80%" stop-color="#475569" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0" />
+    </linearGradient>
+    <filter id="pBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" />
+    </filter>
+    <filter id="pSmoke" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" />
+    </filter>
+  </defs>
+
+  <!-- Agua y estero desecado por sequía extrema -->
+  <rect width="800" height="500" fill="#071b1e" />
+  
+  <!-- Humedales y esteros meándricos -->
+  <path d="M0,80 Q220,140 380,60 T800,90 L800,240 Q550,290 320,210 T0,260 Z" fill="#0f2b2b" />
+  <path d="M0,280 Q280,360 480,290 T800,340 L800,500 L0,500 Z" fill="#14322d" />
+  <path d="M120,0 Q180,180 290,240 T460,420 L400,500 L220,500 Q140,320 80,160 Z" fill="#09181a" opacity="0.9" />
+
+  <!-- Bancos de turba en combustión lenta (smoldering peat fires) -->
+  <ellipse cx="440" cy="280" rx="160" ry="80" fill="#24140b" stroke="#991b1b" stroke-width="2" />
+  <ellipse cx="520" cy="260" rx="110" ry="55" fill="#180b07" />
+
+  <!-- Penacho colosal de humo de turba (alta concentración de CO y PM2.5) -->
+  <path d="M500,280 C400,210 260,150 50,80 L20,0 L320,0 C420,70 540,160 560,250 Z" fill="url(#wetlandSmoke)" filter="url(#pSmoke)" />
+  <path d="M420,310 C310,240 180,190 0,140 L0,20 L240,60 C360,140 460,220 480,290 Z" fill="url(#wetlandSmoke)" filter="url(#pSmoke)" opacity="0.9" />
+
+  <!-- Focos térmicos subterráneos y superficiales -->
+  <circle cx="490" cy="270" r="42" fill="url(#pantanalCore)" filter="url(#pBlur)" />
+  <circle cx="420" cy="290" r="36" fill="url(#pantanalCore)" filter="url(#pBlur)" />
+  <circle cx="560" cy="250" r="30" fill="url(#pantanalCore)" filter="url(#pBlur)" />
+  <circle cx="360" cy="300" r="28" fill="url(#pantanalCore)" filter="url(#pBlur)" />
+  <circle cx="610" cy="230" r="22" fill="url(#pantanalCore)" filter="url(#pBlur)" />
+
+  <path d="M360,300 Q440,280 560,250" stroke="#fef08a" stroke-width="3" fill="none" />
+
+  <!-- HUD Overlay -->
+  <rect x="20" y="20" width="320" height="95" rx="8" fill="#030712" fill-opacity="0.85" stroke="#1e293b" stroke-width="1.5" />
+  <text x="35" y="44" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">🛰️ NASA FIRMS | HUMEDAL PANTANAL</text>
+  <text x="35" y="62" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="11">Detección VIIRS NOAA-20 (Fuego de Turba)</text>
+  <text x="35" y="79" fill="#fed7aa" font-family="'JetBrains Mono', monospace" font-size="11">Régimen: Combustión subterránea persistente</text>
+  <text x="35" y="97" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">Coords: 17°45'S, 57°10'W (Pantanal Norte)</text>
+</svg>
